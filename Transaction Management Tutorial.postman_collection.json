@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "6646c44b-e53c-41c0-9c19-2a561c045646",
+		"name": "Transaction Management Tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7110933"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sachith\",\r\n    \"lastName\": \"Ariyathilaka\",\r\n    \"email\": \"sachith.vidu@yahoo.com\",\r\n    \"contactNo\": \"0702108735\",\r\n    \"username\": \"sachith.vidu@yahoo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/transaction-management-tutorial/api/v1/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction-management-tutorial",
+								"api",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Without Transaction Management",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sachith\",\r\n    \"lastName\": \"Ariyathilaka\",\r\n    \"email\": \"sachith.vidu@yahoo.com\",\r\n    \"contactNo\": \"0702108735\",\r\n    \"username\": \"sachith.vidu@yahoo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/transaction-management-tutorial/api/v1/user/without-transaction-management",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction-management-tutorial",
+								"api",
+								"v1",
+								"user",
+								"without-transaction-management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save With Transaction Management",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Sachith\",\r\n    \"lastName\": \"Ariyathilaka\",\r\n    \"email\": \"sachith.vidu@yahoo.com\",\r\n    \"contactNo\": \"0702108735\",\r\n    \"username\": \"sachith.vidu@yahoo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/transaction-management-tutorial/api/v1/user/with-transaction-management",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"transaction-management-tutorial",
+								"api",
+								"v1",
+								"user",
+								"with-transaction-management"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

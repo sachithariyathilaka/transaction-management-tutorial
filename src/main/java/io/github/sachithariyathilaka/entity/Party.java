@@ -25,7 +25,7 @@ public class Party {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    private Long id;
 
     private String username;
 

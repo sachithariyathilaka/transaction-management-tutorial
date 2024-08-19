@@ -1,31 +1,22 @@
-package io.github.sachithariyathilaka.entity;
+package io.github.sachithariyathilaka.resource.request;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Entity class for the user details.
+ * Resource class for the user request.
  *
  * @author  Sachith Ariyathilaka
  * @version 1.0.0
- * @since   2024/08/04
+ * @since   2024/08/19
  */
-@Entity
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDetails {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    @OneToOne(optional = false)
-    private Party party;
+@Getter
+@Setter
+public class UserRequest {
 
     private String firstName;
 
@@ -34,4 +25,8 @@ public class UserDetails {
     private String email;
 
     private String contactNo;
+
+    private String username;
+
+    private String password;
 }
