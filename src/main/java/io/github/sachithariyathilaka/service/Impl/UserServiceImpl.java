@@ -5,9 +5,7 @@ import io.github.sachithariyathilaka.entity.UserDetails;
 import io.github.sachithariyathilaka.repository.PartyRepository;
 import io.github.sachithariyathilaka.repository.UserDetailsRepository;
 import io.github.sachithariyathilaka.resource.request.UserRequest;
-import io.github.sachithariyathilaka.resource.response.APIResponse;
 import io.github.sachithariyathilaka.service.UserService;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,30 +32,24 @@ public class UserServiceImpl implements UserService {
      *
      * @param   userRequest the user request
      *
-     * @return  the user details api response
+     * @return  the user details
      */
     @Override
-    public APIResponse<UserDetails> save(UserRequest userRequest) {
-        Party party = saveParty(userRequest);
-        UserDetails userDetails = saveUserDetails(userRequest, party);
-
-        return new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+    public UserDetails save(UserRequest userRequest) {
+        return saveUserDetails(userRequest, saveParty(userRequest));
     }
-
 
     /**
      * User saving service method without transaction management.
      *
      * @param   userRequest the user request
      *
-     * @return  the user details api response
+     * @return  the user details
      */
     @Override
-    public APIResponse<UserDetails> saveWithoutTransactionManagement(UserRequest userRequest) {
-        Party party = saveParty(userRequest);
-        UserDetails userDetails = saveUserDetails(userRequest, null);
-
-        return new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+    public UserDetails saveWithoutTransactionManagement(UserRequest userRequest) {
+        saveParty(userRequest);
+        return saveUserDetails(userRequest, null);
     }
 
     /**
@@ -65,15 +57,13 @@ public class UserServiceImpl implements UserService {
      *
      * @param   userRequest the user request
      *
-     * @return  the user details api response
+     * @return  the user details
      */
     @Transactional
     @Override
-    public APIResponse<UserDetails> saveWithTransactionManagement(UserRequest userRequest) {
-        Party party = saveParty(userRequest);
-        UserDetails userDetails = saveUserDetails(userRequest, null);
-
-        return new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+    public UserDetails saveWithTransactionManagement(UserRequest userRequest) {
+        saveParty(userRequest);
+        return saveUserDetails(userRequest, null);
     }
 
     /**

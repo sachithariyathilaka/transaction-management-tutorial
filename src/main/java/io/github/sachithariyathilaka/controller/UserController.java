@@ -1,6 +1,8 @@
 package io.github.sachithariyathilaka.controller;
 
+import io.github.sachithariyathilaka.entity.UserDetails;
 import io.github.sachithariyathilaka.resource.request.UserRequest;
+import io.github.sachithariyathilaka.resource.response.APIResponse;
 import io.github.sachithariyathilaka.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +37,10 @@ public class UserController {
      */
     @PostMapping("/")
     public ResponseEntity<?> save(@RequestBody UserRequest userRequest) {
-        return new ResponseEntity<>(userService.save(userRequest), HttpStatus.OK);
+        UserDetails userDetails = userService.save(userRequest);
+        APIResponse<UserDetails> apiResponse = new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
     }
 
     /**
@@ -47,7 +52,10 @@ public class UserController {
      */
     @PostMapping("/without-transaction-management")
     public ResponseEntity<?> saveWithoutTransactionManagement(@RequestBody UserRequest userRequest) {
-        return new ResponseEntity<>(userService.saveWithoutTransactionManagement(userRequest), HttpStatus.OK);
+        UserDetails userDetails = userService.saveWithoutTransactionManagement(userRequest);
+        APIResponse<UserDetails> apiResponse = new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
     }
 
     /**
@@ -59,6 +67,9 @@ public class UserController {
      */
     @PostMapping("/with-transaction-management")
     public ResponseEntity<?> saveWithTransactionManagement(@RequestBody UserRequest userRequest) {
-        return new ResponseEntity<>(userService.saveWithTransactionManagement(userRequest), HttpStatus.OK);
+        UserDetails userDetails = userService.saveWithTransactionManagement(userRequest);
+        APIResponse<UserDetails> apiResponse = new APIResponse<>(HttpStatus.OK.value(), "User saved successfully!", userDetails);
+
+        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
     }
 }

@@ -12,7 +12,7 @@ import io.github.sachithariyathilaka.resource.response.APIResponse;
  * @since   2024/08/19
  */
 public interface UserService {
-    APIResponse<UserDetails> save(UserRequest userRequest);
-    APIResponse<UserDetails> saveWithoutTransactionManagement(UserRequest userRequest);
-    APIResponse<UserDetails> saveWithTransactionManagement(UserRequest userRequest);
+    UserDetails save(UserRequest userRequest);
+    UserDetails saveWithoutTransactionManagement(UserRequest userRequest);
+    UserDetails saveWithTransactionManagement(UserRequest userRequest);
 }
