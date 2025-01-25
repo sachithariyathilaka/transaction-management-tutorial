@@ -11,7 +11,7 @@ Spring boot transaction management tutorial project.
     * Maven
 
 * ### Configuration
-    * https://sachithariyathilaka.medium.com/transaction-management-in-spring-boot-64b231bc1ebf
+    * [Medium Story](https://sachithariyathilaka.medium.com/transaction-management-in-spring-boot-64b231bc1ebf)
 
 * ### Release Note
 
