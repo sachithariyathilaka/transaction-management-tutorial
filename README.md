@@ -10,13 +10,13 @@ Spring boot transaction management tutorial project.
     * Lombok 1.18.28
     * Maven
 
-* ### Configuration
-    * [Medium Story](https://sachithariyathilaka.medium.com/transaction-management-in-spring-boot-64b231bc1ebf)
+* ### Documentation
+    * [Read on Medium](https://sachithariyathilaka.medium.com/transaction-management-in-spring-boot-64b231bc1ebf)
 
 * ### Release Note
 
-    * Release: 1.0.0
-    * Date: 2024/08/19
+    * Version: 1.0.0
+    * Release Date: 2024/08/19
     * Module: Transaction Management Tutorial
     * Changes
         * Implements the transaction management related functionalities.
